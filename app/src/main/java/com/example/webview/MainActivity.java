@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         wV = findViewById(R.id.wV);
         wV.getSettings().setJavaScriptEnabled(true);
         eT = findViewById(R.id.eT);
+        wV.setWebViewClient(new WebViewClient());
     }
 
     public void Clicked(View view) {
-        
+        String url = eT.getText().toString();
+        wV.loadUrl(url);
     }
-
 }
